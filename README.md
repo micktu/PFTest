@@ -1,9 +1,11 @@
 # PF Test
 Time of completion: approximately 11 hours.
 The Unity version is 2019.2.9f1.
-You can try a WebGL build [here](http://micktu.github.io/PFTest/)
+You can try a WebGL build [here](http://micktu.github.io/PFTest/index.html)
 
 The goal was to build a robust, production-like system in a short timeframe, showcasing what I already know. I mostly succeeded, but I haven't achieved the quality I wanted as I ran out of time. The failure was spending the most time on a cool collision algo, only to fall back to the simpliest one.
+
+I took a liberty of changing some of the game settings provided in order for the simulation to feel better.
 
 ## Architecture
 I followed a few simple patterns.
