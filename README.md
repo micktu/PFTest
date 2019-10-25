@@ -1,11 +1,9 @@
 # PF Test
 Time of completion: approximately 11 hours.
 
-
 The Unity version is 2019.2.9f1.
 
-
-You can try a WebGL build [here](http://micktu.github.io/PFTest/index.html)
+You can try a WebGL build [here](http://micktu.github.io/PFTest/index.html).
 
 
 The goal was to build a robust, production-like system in a short timeframe, showcasing what I already know. I mostly succeeded, but I haven't achieved the quality I wanted as I ran out of time. The failure was spending the most time on a cool collision algo, only to fall back to the simpliest one.
@@ -26,12 +24,12 @@ I followed a few simple patterns.
 ## Entity System
 Entities stored in a generic list of structures to make most use of good memory layout. Whenever they are accessed, ref arguments are used whenever possible; I'm not sure if it does any good in modern C#, though.
 
-The collision system is pretty basic and inaccurate; initially I was aiming for speculative contacts collision, but ran out of time debugging things. Collision lookup is optimized by using a simple grid.
+The collision system is pretty basic and inaccurate; initially I was aiming for speculative contacts collision, but ran out of time debugging things. Collision lookup is optimized by using a simple grid. There are also some edge cases--literally, things get stuck on edges sometimes.
 ## Extra
-It works fine, however, the random seed and sequence are not stored, so whenever you reload in the middle of spawn sequence, the result will be different for future spawns.
+Save states work fine, however, the random seed and sequence are not stored, so whenever you reload in the middle of spawn sequence, the result will be different for future spawns.
 
-Time control also works.
+Time control also works. I wanted to also make a rewind feature, but, uh...
 ## Things to improve
-* **Rendering**: I was planning to make a custom dynamic mesh renderer to avoid game objects whatsoever, but I did not make it in time.
+* **Rendering**: I'd really like to make a custom renderer by generating a single mesh to avoid game objects whatsoever. Easily doable, was not a priority.
 * **Visuals**: Again, I was planning to draw circles using distance fields in a shader, did not make it.
 * **Code quality**: It got a bit messy in the end.
