@@ -104,6 +104,9 @@ public class GameManager : MonoBehaviour
     public void LoadState()
     {
         string json = PlayerPrefs.GetString("SaveState");
+
+        if (string.IsNullOrEmpty(json)) return;
+
         SaveState saveState = JsonUtility.FromJson<SaveState>(json);
         GameContainer.RestoreFromSaveState(saveState);
     }
